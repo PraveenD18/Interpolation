@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linear Interpolation Calculator</title>
+    <script>
+      function calculateY() {
+        let x1 = parseFloat(document.getElementById("x1").value);
+        let y1 = parseFloat(document.getElementById("y1").value);
+        let x2 = parseFloat(document.getElementById("x2").value);
+        let y2 = parseFloat(document.getElementById("y2").value);
+        let x = parseFloat(document.getElementById("x").value);
+        let y = y1 + (x - x1) * ((y2 - y1) / (x2 - x1));
+        document.getElementById("result").innerText = "Calculated Y: " + y;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Linear Interpolation Calculator</h1>
+    <form onsubmit="event.preventDefault(); calculateY();">
+      <label for="x1">X1:</label>
+      <input type="number" id="x1" step="any" required /><br /><br />
+
+      <label for="y1">Y1:</label>
+      <input type="number" id="y1" step="any" required /><br /><br />
+
+      <label for="x2">X2:</label>
+      <input type="number" id="x2" step="any" required /><br /><br />
+
+      <label for="y2">Y2:</label>
+      <input type="number" id="y2" step="any" required /><br /><br />
+
+      <label for="x">X:</label>
+      <input type="number" id="x" step="any" required /><br /><br />
+
+      <button type="submit">Calculate Y</button>
+    </form>
+    <p id="result"></p>
+  </body>
+</html>
